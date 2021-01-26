@@ -2,7 +2,6 @@
 
 enum class FrameStage;
 class GameEvent;
-struct ImDrawList;
 struct UserCmd;
 
 namespace Misc
@@ -12,12 +11,11 @@ namespace Misc
     void inverseRagdollGravity() noexcept;
     void updateClanTag(bool = false) noexcept;
     void spectatorList() noexcept;
-    void noscopeCrosshair(ImDrawList* drawlist) noexcept;
-    void recoilCrosshair(ImDrawList* drawList) noexcept;
+    void sniperCrosshair() noexcept;
+    void recoilCrosshair() noexcept;
     void watermark() noexcept;
     void prepareRevolver(UserCmd*) noexcept;
     void fastPlant(UserCmd*) noexcept;
-    void fastStop(UserCmd*) noexcept;
     void drawBombTimer() noexcept;
     void stealNames() noexcept;
     void disablePanoramablur() noexcept;
@@ -25,7 +23,10 @@ namespace Misc
     bool changeName(bool, const char*, float) noexcept;
     void bunnyHop(UserCmd*) noexcept;
     void fakeBan(bool = false) noexcept;
-    void nadePredict() noexcept;
+    void setName(bool set) noexcept;
+    void fakeItem(bool set) noexcept;
+	void nadePredict() noexcept;
+    void quickHealthshot(UserCmd*) noexcept;
     void fixTabletSignal() noexcept;
     void fakePrime() noexcept;
     void killMessage(GameEvent& event) noexcept;
@@ -42,12 +43,4 @@ namespace Misc
     void playHitSound(GameEvent& event) noexcept;
     void killSound(GameEvent& event) noexcept;
     void purchaseList(GameEvent* event = nullptr) noexcept;
-    void oppositeHandKnife(FrameStage stage) noexcept;
-    void runReportbot() noexcept;
-    void resetReportbot() noexcept;
-    void preserveKillfeed(bool roundStart = false) noexcept;
-    void drawOffscreenEnemies(ImDrawList* drawList) noexcept;
-    void autoAccept(const char* soundEntry) noexcept;
-
-    void updateInput() noexcept;
 }
